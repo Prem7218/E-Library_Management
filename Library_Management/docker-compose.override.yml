@@ -1,0 +1,6 @@
+version: '3.4'
+
+services:
+  library_management:
+    ports:
+      - "80"

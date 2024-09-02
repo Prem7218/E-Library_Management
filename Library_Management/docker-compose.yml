@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  library_management:
+    image: ${DOCKER_REGISTRY-}librarymanagement
+    build:
+      context: Library_Management
+      dockerfile: Dockerfile

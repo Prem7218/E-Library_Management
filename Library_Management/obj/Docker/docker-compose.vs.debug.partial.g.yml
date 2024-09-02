@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  library_management:
+    image: librarymanagement:dev
+    container_name: "Library_Management"
+    build:
+      args:
+        BUILD_CONFIGURATION: Debug
+        source: obj/Docker/empty/
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Library_Management"
+    volumes:
+      - C:\Users\radhe\source\repos\Library_Management\Library_Management:C:\inetpub\wwwroot
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Remote Debugger:C:\remote_debugger:ro
+    entrypoint: cmd /c "start /B C:\\ServiceMonitor.exe w3svc & C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646"
+    environment:
+      - DEV_ENVIRONMENT=1
+      - VBCSCOMPILER_TTL=604800
+

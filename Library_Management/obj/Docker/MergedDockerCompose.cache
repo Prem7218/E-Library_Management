@@ -1,0 +1,16 @@
+name: dockercompose12250061075331887469
+services:
+  library_management:
+    build:
+      context: C:\Users\radhe\source\repos\Library_Management\Library_Management
+      dockerfile: Dockerfile
+    image: librarymanagement
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose12250061075331887469_default

@@ -1,0 +1,42 @@
+name: dockercompose12250061075331887469
+services:
+  library_management:
+    build:
+      context: C:\Users\radhe\source\repos\Library_Management\Library_Management
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        source: obj/Docker/empty/
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Library_Management
+    container_name: Library_Management
+    entrypoint:
+      - cmd
+      - /c
+      - start /B C:\ServiceMonitor.exe w3svc & C:\remote_debugger\x64\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646
+    environment:
+      DEV_ENVIRONMENT: "1"
+      VBCSCOMPILER_TTL: "604800"
+    image: librarymanagement:dev
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\radhe\source\repos\Library_Management\Library_Management
+        target: C:\inetpub\wwwroot
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Remote Debugger
+        target: C:\remote_debugger
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose12250061075331887469_default

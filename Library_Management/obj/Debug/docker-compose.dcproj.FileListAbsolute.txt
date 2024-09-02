@@ -1,0 +1,6 @@
+C:\Users\radhe\source\repos\Library_Management\bin\Debug\Library_Management.dll
+C:\Users\radhe\source\repos\Library_Management\bin\Debug\Library_Management.pdb
+C:\Users\radhe\source\repos\Library_Management\bin\Debug\Library_Management.dll.config
+C:\Users\radhe\source\repos\Library_Management\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\radhe\source\repos\Library_Management\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\radhe\source\repos\Library_Management\obj\Debug\docker-c.35A3FFBA.Up2Date
